@@ -1,4 +1,4 @@
-# riceBreedingProyect (Finding cisRegulatory Modules in regulatory gene equences)
+# riceBreedingProyect (Finding cisRegulatory Modules in regulatory gene sequences)
 ## 1) Extracting gene promoter regions in fasta file
 (Parameters: Assembly genome in fasta and gff3 file with annotation; by deafult, both parameters are available for rice genome on data/)
 
