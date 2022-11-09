@@ -1,11 +1,12 @@
 # riceBreedingProyect (Finding cisRegulatory Modules in regulatory gene sequences)
 ## 1) Extracting gene promoter regions in fasta file
-(Parameters: Assembly genome in fasta and gff3 file with annotation; by deafult, both parameters are available for rice genome on data/)
+Use FindPromoters.zip
+(Parameters: Assembly genome in fasta and gff3 file with annotation; by deafult, both parameters are available [here](https://data.jgi.doe.gov/refine-download/phytozome?organism=Osativa&expanded=323))
 
 ## 2) Finding the known broad spectrum defense response (BSDR) genes list
 Obtained as a list (Table S9) in the [supplementary material of Tonensen *et al.*](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6367480/). 
 ## 3) Obtaining the BSDR gene promoter region 
-On Linux terminal for filter the promoter regions of interest use:
+On Linux terminal, for filter the promoter regions of interest use:
 ```
 grep ':a;N;/^>/M!s/\n//;ta;P;D' < annotatedPromoters.fa > annotatedPromoters1.fa
 grep -f 'BSDRGlist.txt' -A 1 annotatedPromoters1.fa | grep '\-\-' -v > BSDRPromoters.fa
@@ -17,7 +18,7 @@ For use XSTREME on Linux terminal with a TFBSshape database:
 ```
 ./xtreme --oc ../../Documents/riceProyect/resultsMeme/xtremeResults/ --time 240 --streme-totallength 4000000 --meme-searchsize 100000 --dna --ent 0.05 --minw 4 --maxw 15 --meme-mod anr --sea-noseqs --m ../../Documents/riceProyect/genomeData/workFiles/motif_databases.12.23/motif_databases/TFBSshape/TFBSshape_JASPAR.meme --p ../../Documents/riceProyect/genomeData/workFiles/BSDRPromoters.fa -n ../../Documents/riceProyect/genomeData/workFiles/annotatedPromoters1.fa 
 ```
-When --m is the TFBS database to compare, --p are the imput sequences, and -n are the background sequences considered as control sequences.
+When --meme-mod is the motif distribution expected (any number of repetitions in this case), --m is the TFBS database to compare, --p are the imput sequences, and -n are the background sequences considered as control sequences.
 ## 5) Finding motif clusters from the BSDR promoters and an alphabet with defined motifs (XSTREME output)
 ClusterBuster algorithm was performed to find cis regulatory modules (CRMs) on the promoter sequences, using as alphabet a list of motifs previously discovered by XSTREME tool, giving it as an output called combined.meme 
 The executable is available [here](https://zlab.umassmed.edu/bu/cluster-buster/download.html), an the code on Linux terminal is:
