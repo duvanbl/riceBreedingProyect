@@ -8,7 +8,7 @@ Obtained as a list (Table S9) in the [supplementary material of Tonensen *et al.
 ## 3) Obtaining the BSDR gene promoter region 
 On Linux terminal, for filter the promoter regions of interest use:
 ```
-grep ':a;N;/^>/M!s/\n//;ta;P;D' < annotatedPromoters.fa > annotatedPromoters1.fa
+sed ':a;N;/^>/M!s/\n//;ta;P;D' < annotatedPromoters.fa > annotatedPromoters1.fa
 grep -f 'BSDRGlist.txt' -A 1 annotatedPromoters1.fa | grep '\-\-' -v > BSDRPromoters.fa
 ```
 When BSDRGlist.txt is the text file with the IDs of the genes of interest enter separated.
