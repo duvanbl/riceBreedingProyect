@@ -10,7 +10,7 @@ Two parameters are required: The first one is a TXT file with the specific seque
 **Note:** Before running `motifDiscoveryJob.sh`, it should be modified to change the path to the MEME Suite binary and the associated databases (see the comments within for specific details).
 
 ## Analyze motifs 
-Simple scripts can be used to extract information from the XSTREME results: For example, `getMotifOutputs.sh` extracts the TXT files with the positional weight matrices (a quantitative representation of the motifs) found in all varieties, which will be used in future analyses; also, `countMotifs.sh' prints the number of motifs found for each variety.
+Simple scripts can be used to extract information from the XSTREME results: For example, `getMotifOutputs.sh` extracts the TXT files with the positional weight matrices (a quantitative representation of the motifs) found in all varieties, which will be used in future analyses; also, `countMotifs.sh` prints the number of motifs found for each variety.
 
 Other scripts present in this section can be useful comparing and searching the motifs obtained in the promoter sequences:
 ### 1) Align motifs
