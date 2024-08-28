@@ -10,7 +10,7 @@ Once that you can codify the motifs instances, a new FASTA will be generated wit
 In the same script `createModules.R` you can create blocks between 2 and 7 neighboring motifs and evaluate their frequency among varieties and against a control of random promoters to highlight blocks of modules that could be present only under certain conditions.
 
 ### 2) Pseudoalphabet align
-Use `moduleAlignFinal.sh` to align the pseudoaphabets product of the codification of motifs performed in the previous steps. This script use MsAlign2.0 in the FASTA with the modifications, the binarie can be downloaded [here](http://www.atgc-montpellier.fr/ms_align/usersguide.php). Also, is neccesary to have a triangular matrix which represents the mutation ratio against the motifs and the list of gene promoters to evaluate. On linux terminal use:
+Use `moduleAlignFinal.sh` to align the custom aphabet products of the codification of motifs performed in the previous steps. This script use MsAlign2.0 in the FASTA with the modifications, the binarie can be downloaded [here](http://www.atgc-montpellier.fr/ms_align/usersguide.php). Also, is neccesary to have a triangular matrix which represents the mutation ratio against the motifs and the list of gene promoters to evaluate. On linux terminal use:
 
 ```
 ./moduleAlignFinal.sh HSRList.txt codificationMotifsHSR.fa HSRTriangularMatrix.tsv Moroberekan
